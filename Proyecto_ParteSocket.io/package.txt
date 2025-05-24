@@ -1,0 +1,26 @@
+/*{
+  "name": "chat-app-secure",
+  "version": "1.0.0",
+  "description": "Secure chat application with Socket.IO, JWT, RSA and AES encryption.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "socket.io": "^4.7.5",
+    "sqlite3": "^5.1.7",
+    "webcrypto": "^0.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "socket.io-client": "^4.8.1",
+    "supertest": "^7.1.1"
+  }
+}*/
