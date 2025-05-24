@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Seguro JS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chat E2E</h1>
+
+        <!-- Sección de Autenticación -->
+        <div id="auth-section">
+            <h2>Registro / Login</h2>
+            <input type="text" id="username" placeholder="Nombre de usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button id="register-btn">Registrar</button>
+            <button id="login-btn">Iniciar Sesión</button>
+            <p id="auth-message"></p>
+        </div>
+
+        <!-- Sección Principal del Chat -->
+        <div id="chat-section" style="display: none;">
+            <div class="header">
+                <h2>Bienvenido, <span id="current-user"></span>!</h2>
+                <p>Usuarios en línea: <span id="online-users"></span></p>
+                <button id="logout-btn" class="logout-btn">Cerrar Sesión</button>
+            </div>
+
+            <div class="main-chat-area">
+                <!-- Panel de Amigos -->
+                <div class="friends-panel">
+                    <h3>Amigos</h3>
+                    
+                    <!-- Buscar y agregar amigos -->
+                    <div class="add-friends-section">
+                        <input type="text" id="search-users" placeholder="Buscar usuarios..." />
+                        <div id="search-results" class="search-results"></div>
+                    </div>
+
+                    <!-- Solicitudes de amistad -->
+                    <div class="friend-requests-section">
+                        <h4>Solicitudes pendientes</h4>
+                        <div id="friend-requests-list" class="requests-list"></div>
+                    </div>
+
+                    <!-- Lista de amigos -->
+                    <div class="friends-list-section">
+                        <h4>Mis amigos</h4>
+                        <div id="friends-list" class="friends-list"></div>
+                    </div>
+                </div>
+
+                <!-- Panel de Chat -->
+                <div class="chat-panel">
+                    <div id="no-chat-selected" class="no-chat-message">
+                        <h3>Selecciona un amigo para comenzar a chatear</h3>
+                        <p>Haz clic en uno de tus amigos para abrir el chat</p>
+                    </div>
+
+                    <div id="active-chat" class="active-chat" style="display: none;">
+                        <div class="chat-header">
+                            <h4>Chat con <span id="chat-partner"></span></h4>
+                            <div class="chat-controls">
+                                <button id="clear-chat-btn" class="small-btn">Limpiar Chat</button>
+                                <button id="close-chat-btn" class="small-btn">Cerrar Chat</button>
+                            </div>
+                        </div>
+                        
+                        <div id="messages" class="messages-container"></div>
+                        
+                        <div class="message-input-area">
+                            <input type="text" id="message-input" placeholder="Escribe un mensaje..." disabled>
+                            <button id="send-message-btn" disabled>Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
